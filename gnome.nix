@@ -19,7 +19,10 @@
         gnomeExtensions.timepp
         gnomeExtensions.application-volume-mixer
         gnomeExtensions.bluetooth-quick-connect
-
+        gnomeExtensions.aylurs-widgets
+        gnomeExtensions.rounded-window-corners
+        gnomeExtensions.gsconnect
+        gnomeExtensions.rounded-corners
         #Native Programs
         gnome.gnome-tweaks
         gnome.gnome-boxes
@@ -31,7 +34,7 @@
         gparted
     ];
 
-    programs.dconf.enable = true;
+    # programs.dconf.enable = true;
 
   };
 }

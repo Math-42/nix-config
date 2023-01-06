@@ -10,6 +10,7 @@
         
         # Nix 
         comma
+        direnv
         
         # Files 
         exa
@@ -32,6 +33,8 @@
         # Versioning
         git
         gh
+
+        ventoy-bin-full
     ];
   };
 }

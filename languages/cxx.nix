@@ -2,7 +2,7 @@
   config = {
     environment.systemPackages = with pkgs; [
         gcc
-        ccls
+        # ccls
         clang
         clang-tools
     ];

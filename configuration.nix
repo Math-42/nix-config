@@ -15,9 +15,12 @@
       ./terminal/terminal.nix
       ./miscellaneous/miscellaneous.nix
       ./editors/editors.nix
+      ./virtualisation/virtualisation.nix
+      ./games/games.nix
+      ./nixos.nix
     ];
 
-  # Bootloader.
+  # Bootloader .
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,7 +41,7 @@
   time.timeZone = "America/Sao_Paulo";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.utf8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.utf8";
@@ -90,51 +93,14 @@
     ];
   };
   
-  # Home manager configuration
-  #home-manager.users.math-42 = {pkgs, ...}: {
-  #  home.packages = [ pkgs.atool ];
-  #  programs.bash.enable = true;
-  #};
-
-  #home-manager.useUserPackages = true;
-  #home-manager.useGlobalPkgs = true;
-  
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  ############################################################################################################
-
-  # podman and distrobox
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };	
-
   environment.systemPackages = with pkgs; [
     #browsers 
     google-chrome
     firefox
-    qutebrowser
-
-    #libraries
-    # libvterm
 
     binutils
     coreutils
     lld
-
-    #editors
-    # # emacs 
-    # ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
-    #   epkgs.vterm
-    # ]))
-
-    # emacs28Packages.vterm
-    
-    # Virtualization
-    distrobox
-    qemu
 
     # Fonts
     fira-mono
@@ -149,34 +115,22 @@
     zathura
     qbittorrent
     glow
-    steam
     peek
+    spotify
+    fragments
 
     # Productivity
     obsidian
+
+    libxcrypt
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  system.autoUpgrade.enable = true;
   fonts.fonts = with pkgs; [
   	(nerdfonts.override { fonts = ["FiraCode" "FiraMono"];})
   ];
 
-  nix.settings.auto-optimise-store = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  programs.steam.enable = true;
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  ############################################################################################################
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

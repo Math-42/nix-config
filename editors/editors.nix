@@ -8,11 +8,13 @@
             neovim
             vscode-fhs
             spacevim
+            tree-sitter
         ];
 
         programs.neovim.enable = true;
         programs.neovim.defaultEditor = true;
         environment.variables.EDITOR = "nvim";
+        
 
     };
 }

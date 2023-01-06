@@ -1,7 +1,10 @@
 {config, pkgs, ...}:{
   config = {
     environment.systemPackages = with pkgs; [
-        emacs
+      ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
+        epkgs.vterm
+      ]))
+
     ];
     
     services.emacs.enable = true;
