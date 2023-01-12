@@ -4,5 +4,6 @@
      ./starship.nix
      ./kitty.nix
      ./fish.nix
+     ./zsh.nix
   ];
 }
