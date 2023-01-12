@@ -21,6 +21,7 @@
         zip
         unzip
         xdragon
+        tree
 
         # System monitoring 
         btop
