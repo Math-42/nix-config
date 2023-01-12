@@ -2,6 +2,7 @@
   config = {
     environment.systemPackages = with pkgs; [
         fish
+        oh-my-posh
     ];
 
     programs.fish.enable = true;
@@ -18,6 +19,8 @@
       c = "clear";
       l = "exa --icons -la";
       ls = "exa --icons";
+      update = "sudo nixos-rebuild switch";
+      mx = "export TERM=xterm-24bit && emacsclient -t";
     };
   };
 }
