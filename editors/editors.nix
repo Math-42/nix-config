@@ -6,15 +6,11 @@
         environment.systemPackages = with pkgs; [
             vim
             neovim
-            vscode-fhs
-            spacevim
             tree-sitter
         ];
 
-        programs.neovim.enable = true;
-        programs.neovim.defaultEditor = true;
-        environment.variables.EDITOR = "nvim";
-        
+        services.emacs.defaultEditor = true;
+        environment.variables.EDITOR = "emacs -nw";
 
     };
 }
