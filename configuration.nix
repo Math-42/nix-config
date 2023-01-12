@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -9,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./nvidia.nix
-      ./gnome.nix
+      ./gnome/gnome.nix
       ./build-tools.nix
       ./languages/languages.nix
       ./terminal/terminal.nix
@@ -18,6 +14,8 @@
       ./virtualisation/virtualisation.nix
       ./games/games.nix
       ./nixos.nix
+      ./security/security.nix
+      ./media/media.nix
     ];
 
   # Bootloader .
@@ -109,20 +107,8 @@
     #social
     discord
 
-    # Media
-    stremio
-    vlc
-    zathura
-    qbittorrent
-    glow
-    peek
-    spotify
-    fragments
-
     # Productivity
     obsidian
-
-    libxcrypt
   ];
 
   fonts.fonts = with pkgs; [
