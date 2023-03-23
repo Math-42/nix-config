@@ -2,7 +2,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
+      ./home-manager.nix
       ./hardware-configuration.nix
       ./nvidia.nix
       ./gnome/gnome.nix
@@ -16,6 +18,8 @@
       ./nixos.nix
       ./security/security.nix
       ./media/media.nix
+      ./flox.nix
+      ./von-braun/von-braun.nix
     ];
 
   # Bootloader .
@@ -90,11 +94,13 @@
     packages = with pkgs; [
     ];
   };
-  
+
   environment.systemPackages = with pkgs; [
     #browsers 
     google-chrome
     firefox
+    vivaldi
+    brave
 
     binutils
     coreutils
@@ -112,7 +118,7 @@
   ];
 
   fonts.fonts = with pkgs; [
-  	(nerdfonts.override { fonts = ["FiraCode" "FiraMono"];})
+    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" ]; })
   ];
 
   # Enable the OpenSSH daemon.

@@ -6,6 +6,7 @@
         environment.systemPackages = with pkgs; [
             vim
             neovim
+            vscode-fhs
             tree-sitter
         ];
 

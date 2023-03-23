@@ -3,6 +3,7 @@
         ./circle-apps.nix
         ./core-apps.nix
         ./extensions.nix
+        ./themes.nix
     ];
     config = {
 

@@ -6,6 +6,7 @@
       deja-dup
       gtk-engine-murrine
       fragments
+      zafiro-icons
     ];
   };
 }

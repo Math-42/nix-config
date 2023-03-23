@@ -1,41 +1,42 @@
-{config, pkgs, ...}:{
+{ config, pkgs, ... }: {
   config = {
     environment.systemPackages = with pkgs; [
-        # Web
-        curl
-        wget
+      # Web
+      curl
+      wget
 
-        # Documentation
-        tldr
-        
-        # Nix 
-        comma
-        direnv
-        
-        # Files 
-        exa
-        ripgrep
-        bat
-        fd
-        broot
-        zip
-        unzip
-        xdragon
-        tree
+      # Documentation
+      tldr
 
-        # System monitoring 
-        btop
-        htop
-        neofetch
-        kmon
-        gping
-        ncdu
+      # Nix 
+      comma
+      direnv
 
-        # Versioning
-        git
-        gh
+      # Files 
+      exa
+      ripgrep
+      bat
+      fd
+      broot
+      zip
+      unzip
+      xdragon
+      tree
+      trashy
 
-        ventoy-bin-full
+      # System monitoring 
+      btop
+      htop
+      neofetch
+      kmon
+      gping
+      ncdu
+
+      # Versioning
+      git
+      gh
+
+      ventoy-bin-full
     ];
   };
 }
